@@ -1,0 +1,60 @@
+--------------------------------------------------------------------------------------------------------------------------------
+1. What is a functional component?
+A component we can call instead of create many lines of html.
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+functional components should be used over class components if possible.
+
+2. What is a Class Component 
+almost same a functional component, but class component has a few perks.
+https://medium.com/@Zwenza/functional-vs-class-components-in-react-231e3fbd7108 
+
+3. What is the idea with props
+being able to read specific properties when calling components.
+
+4. Provide a simple example in how you write a Component that accepts props
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+
+5. Provide a simple example (could be a line from the exercise above) that demonstrates how you pass in props to a Component
+{} => {props} => {props.property} <-> {props.name}
+--------------------------------------------------------------------------------------------------------------------------------
+1. Would it be possible to rewrite the Clock component into a functional component (provide arguments for your answer)?
+No it isnt, since functional components are stateless.
+
+2. How do you set values for state in these places: 1) In the constructor 2) all other places?
+In the constructor.
+
+3. How is it possible to "tell" React that you want the UI to be updated (re-rendered)?
+With a componentDidMount, it runs after the dom has been rendered.
+
+4. Which method, in the Clock class, is responsible for “forcing” a re-render
+componentDidMount()
+
+5. What is the difference(s) between state and props
+props are read-only, state is dynamic
+
+6. How do you pass in prop values to a Component
+<Welcome name="Hello World" />
+
+7. What is the purpose of React Components Life Cycle Methods?
+Creation --> Growing --> Ending 
+For everything.
+
+---------------------------------------------------------------------------------------------------------------------------------
+1. Provide a small explanation for each of the outputs, the purpose of the override, and when you observed it to print.
+Constructor is the first one to be called.
+Then the render is called
+componenetDidMount runs after the render.
+Then tick is called to change the value of the clock
+and render is called to render it to the componenetDidMount
+The last two is looping every 1 second as stated in 
+the componenetDidMount.
+Tick --> Render --> Tick --> Render
+Tick --> ComponentWillUpdate --> Render --> ComponentDidUpdate

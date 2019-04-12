@@ -1,0 +1,57 @@
+1. What is the purpose of the key value, which must be given to individual rows in a react-list
+The purpose is to that react can tell which element we have changed and therefore change that element.'
+
+2. It's recommended to use a unique value from your data if available (like an ID). How do you get a 
+unique value in a map callback, for data without a unique id?
+YES IT'S RECOMMENDED! how? here:
+function TableItem({ members }) {
+    return (members.map((m, index) => <tr key={index}><td>{index}</td><td>{m.name}</td><td>{m.age}</td></tr>));
+}
+by using "index" in the map call or by using m.id if members have an id.
+
+3. What is the difference(s) between state and props?
+props are read-only, state is dynamic
+
+4. For which scenarios would you use props, and for which would you use state?
+i would use props when i need to read values only, and use states when i need to change something.
+
+5. Where is the only place you can set state directly as in:  this.state = {name: "Peter"};
+Contructor.
+
+6. How must you set state all other places?
+this.setState({
+            numbers: newArray
+        });
+--------------------------------------------------------------------------------------------------------------------------------
+1. In a Controlled Component React state is made the "Single source of truth", so how:
+a. Do we ensure that input controls like text, textarea or select always presents the value found in the components state?
+
+
+b. Do we ensure that a controls state, always matches the value found in an input control?
+
+
+2. What is the purpose of doing event.preventDefault() in an event handler?
+
+
+3. What would be the effect of NOT doing event.preventDefault in a submit handler
+
+
+4. Why don't we want to submit the traditional way, in a single page application?
+
+
+5. What are the two different ways we can use to make this works as expected for our event handlers?
+
+
+6. Explain in words what it takes to implement the "Controlled Component" pattern for a form
+
+--------------------------------------------------------------------------------------------------------------------------------
+1. What is meant by the react term “Lifting State Up”?
+
+
+2. Where do you lift it up to?
+
+
+3. Which way does React recommend data to flow: From sibling to sibling, from bottom to top or from top to bottom?
+
+
+4. Lifting state up, involves a great deal of boilerplate code, what’s the benefit we get from doing “things” like this?
